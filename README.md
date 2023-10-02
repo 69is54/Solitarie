@@ -1,30 +1,50 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite Project
 
-## Please clone the project using
+This repository contains a project setup for working with React, TypeScript, and Vite. Follow the instructions below to clone the project and get it running on your local machine.
 
-git clone https://github.com/username/repo.git
+## Cloning the Repository
 
+Clone the repository to your local machine using the following command:
 
-## To start the project on the server http://localhost:5173/
-
+```bash
+git clone https://github.com/[username]/repo.git
+```
+## Setting Up the Project
+### 1. Install dependencies
+You can use npm, yarn, or pnpm to install the necessary dependencies for this project. Run one of the following commands in the project directory:
+```bash
 npm install
+```
+or
+```bash
+yarn install
+```
+or 
+```bash
+pnpm install
+```
+### 2. Start the Development Server
+Start the development server to run the project on http://localhost:5173/ by executing one of the following commands:
+```bash
 npm run dev
+```
+or
+```bash
+yarn dev
+```
+or 
+```bash
+pnpm dev
+```
 
-
-## Commit rules:
-
-feature: This prefix is used for commits that introduce new features or functionality to the codebase.
-
-fix: Commits with this prefix are meant for bug fixes. They address and resolve issues or defects in the code.
-
-chore: This prefix is for routine tasks, maintenance, or general codebase improvements that don't fall into the other categories.
-
-docs: Commits with this prefix update or add documentation. This could be code comments, README files, or other documentation-related changes.
-
-refactor: Commits with this prefix indicate code refactoring. This means restructuring or optimizing code without adding new features or fixing bugs.
-
-test: These commits involve changes or additions to the test suite, including unit tests, integration tests, or test-related configurations.
-
-build: These commits are related to build system changes, dependencies, or package management. They include updates to build scripts or configurations.
-
-ci: Commits with this prefix involve changes to continuous integration (CI) configurations or pipelines.
+## How to Contribute
+### Commit Conventions
+Adhere to the following prefixes when making commits to this repository:
+* **feature**: For commits introducing new features or functionality.
+* **fix**: For commits addressing bug fixes and resolving issues or defects.
+* **chore**: For routine tasks, maintenance, or general improvements that don't fall into other categories.
+* **docs**: For commits related to documentation updates or additions.
+* **refactor**: For commits indicating code restructuring or optimizations without adding new features or fixing bugs.
+* **test**: For commits related to changes or additions in the test suite.
+* **build**: For commits related to build system changes, dependencies, or package management.
+* **ci**: For commits related to continuous integration configurations or pipelines.this prefix involve changes to continuous integration (CI) configurations or pipelines.
