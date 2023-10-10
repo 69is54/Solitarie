@@ -1,0 +1,87 @@
+/* styles/globals.css */
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+blockquote,
+pre,
+code,
+em,
+img,
+small,
+strong,
+sub,
+sup,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+button,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* Set the base font size and line height */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+head{
+    background-color: grey;
+}
+
+/* Apply a basic background color and text color to the entire app */
+body {
+  background-color: black;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Add styles to hyperlinks */
+a {
+  color: #0070f3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style headings */
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Add some spacing between paragraphs */
+p {
+  margin: 1rem;
+}
+
+/* Define a container to center the content */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header{
+    background-color: grey;
+}
+

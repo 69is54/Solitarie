@@ -1,8 +1,8 @@
+'use client'
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import introAudio from "../src/assets/intro.mp3";
-import "./App.css";
+import reactLogo from "../../public/react.svg";
+import introAudio from "../../public/intro.mp3";
+
 
 function App() {
   const [isButtonClicked, setButtonClicked] = useState(false);
@@ -64,17 +64,11 @@ function App() {
         <footer>
           <section>
             <p className="rea d-the-docs">
-              Don't know what to do? 
-              1. Click on the logos to learn more
-              2. create a new page to document the collaborators' contributions!
-              3. Did you notice that the audio file can be played while it is already playing? Fix the bug!
+              Dont know what to do? 1.create a new page to document the collaborators contributions! 2.
+              Did you notice that the audio file can be played while it is
+              already playing? Fix the bug!
             </p>
-            <a href="https://vitejs.dev" target="_blank">
-              <img src={viteLogo} className="logo" alt="Vite logo" />
-            </a>
-            <a href="https://react.dev" target="_blank">
-              <img src={reactLogo} className="logo react" alt="React logo" />
-            </a>
+    
           </section>
         </footer>
       </div>
