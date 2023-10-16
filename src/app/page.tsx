@@ -37,6 +37,7 @@ const {isButtonClicked, setButtonClicked} = useMyContext();
               <mark> Do not use any UI libraries. </mark> We want to learn how
               to build UIs from scratch.
             </p>
+            <p>whatever I hate stylings I want to use Tailwind</p>
             <p>
               <strong>Rule 2:</strong> Feel free to add any features you want,
               but please make sure to{" "}
