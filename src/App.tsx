@@ -1,13 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import introAudio from "../src/assets/intro.mp3";
-import "./App.css";
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import introAudio from '../src/assets/intro.mp3';
+import './App.css';
+
+const audio = new Audio(introAudio);
 
 function App() {
   const [isButtonClicked, setButtonClicked] = useState(false);
   const handlerPlayWelcomeTrack = () => {
-    const audio = new Audio(introAudio);
     audio.play();
     setButtonClicked(true);
   };
@@ -38,11 +39,11 @@ function App() {
             </p>
             <p>
               <strong>Rule 2:</strong> Feel free to add any features you want,
-              but please make sure to{" "}
+              but please make sure to{' '}
               <mark> build a branch and send a merge request.</mark>
             </p>
             <p>
-              <strong>Rule 3:</strong> Add <mark> comments to your code</mark>{" "}
+              <strong>Rule 3:</strong> Add <mark> comments to your code</mark>{' '}
               so that other developers can understand your implementation.
             </p>
             <p>
@@ -64,10 +65,10 @@ function App() {
         <footer>
           <section>
             <p className="rea d-the-docs">
-              Don't know what to do? 
-              1. Click on the logos to learn more
-              2. create a new page to document the collaborators' contributions!
-              3. Did you notice that the audio file can be played while it is already playing? Fix the bug!
+              Don't know what to do? 1. Click on the logos to learn more 2.
+              create a new page to document the collaborators' contributions! 3.
+              Did you notice that the audio file can be played while it is
+              already playing? Fix the bug!
             </p>
             <a href="https://vitejs.dev" target="_blank">
               <img src={viteLogo} className="logo" alt="Vite logo" />
