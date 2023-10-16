@@ -1,16 +1,17 @@
 'use client'
 import { useState } from "react";
 import reactLogo from "../../public/react.svg";
+import { useMyContext } from "../app/provider/statesProvider";
 import introAudio from "../../public/intro.mp3";
 
-
 function App() {
-  const [isButtonClicked, setButtonClicked] = useState(false);
+const {isButtonClicked, setButtonClicked} = useMyContext();
   const handlerPlayWelcomeTrack = () => {
     const audio = new Audio(introAudio);
     audio.play();
     setButtonClicked(true);
   };
+
 
   return (
     <>
@@ -63,7 +64,7 @@ function App() {
         </main>
         <footer>
           <section>
-            <p className="rea d-the-docs">
+            <p className="read-the-docs">
               Dont know what to do? 1.create a new page to document the collaborators contributions! 2.
               Did you notice that the audio file can be played while it is
               already playing? Fix the bug!

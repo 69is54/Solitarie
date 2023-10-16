@@ -1,22 +1,22 @@
-import React from 'react';
+'use client'
+import React from "react";
+import { useMyContext } from "../provider/statesProvider";
+import Card from "../component/card";
 
 function AboutPage() {
+  const {isCardVisible, showCard } = useMyContext();
+
+
   return (
     <div>
       <div className="container">
         <h2>Welcome to Our Website</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dui vel nisi
-          varius tempus. Curabitur vel ante ac lectus cursus luctus eget in ligula. Nam
-          suscipit nunc vel velit fringilla, ut blandit lorem ullamcorper. Vestibulum ante
-          ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas
-          elementum erat in luctus congue.
+        Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater,
         </p>
-        <p>
-          Learn more about our services and products on our{' '}
-          <a href="/">Home Page</a>.
-        </p>
+        <button onClick={showCard}>click me</button>
       </div>
+      {isCardVisible && <Card />}
     </div>
   );
 }
