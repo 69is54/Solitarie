@@ -1,21 +1,36 @@
-'use client'
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { useMyContext } from "../provider/statesProvider";
 
+const Card: React.FC = () => {
+  const { isCardVisible, submitCard } = useMyContext();
+  const [text, setText] = useState("");
 
+  const checkInput = (text: string) => {
+    console.log(text);
+    text ? submitCard : alert("Nah, you gotta say something now");
+  };
 
-const Card: React.FC= () => {
-  const { isCardVisible, hideCard } = useMyContext();
-
-
+  const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(e.target.value);
+  };
   return (
-    <div className={`card ${isCardVisible ? 'visible' : ''}`}>
-      <h2>title</h2>
-      <h1>heading</h1>
-      <p>paragraph</p>
-      <button onClick={hideCard}>Close</button>
+    <div className={`card ${isCardVisible ? "cardVisible" : ""}`}>
+      <h1>Endless sentence game</h1>
+      <textarea
+        id="story"
+        name="story"
+        rows={5}
+        cols={33}
+        placeholder="Write something: I want a ugly navbar"
+        className="text-center ..."
+        onChange={handleTextAreaChange}
+      ></textarea>
+      <button type="submit" onClick={() => checkInput(text)}>
+        Submit
+      </button>
     </div>
   );
-}
+};
 
 export default Card;

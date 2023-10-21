@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, createContext, useContext } from "react";
 
 interface ContextType {
@@ -6,7 +6,7 @@ interface ContextType {
   setButtonClicked: (value: boolean) => void;
   isCardVisible: boolean;
   showCard: () => void;
-  hideCard: () => void;
+  submitCard: () => void;
 }
 
 const MyContext = createContext<ContextType>(undefined as never);
@@ -16,18 +16,25 @@ export const useMyContext = () => useContext(MyContext);
 const MyProvider = ({ children }: { children: React.ReactNode }) => {
   const [isButtonClicked, setButtonClicked] = useState(false);
   const [isCardVisible, setCardVisible] = useState(false);
+  const [textAreaContext, setTextAreaContext] = useState(false);
 
   const showCard = () => {
     setCardVisible(true);
   };
 
-  const hideCard = () => {
+  const submitCard = () => {
     setCardVisible(false);
   };
 
   return (
     <MyContext.Provider
-      value={{ isButtonClicked, setButtonClicked, isCardVisible, showCard, hideCard }}
+      value={{
+        isButtonClicked,
+        setButtonClicked,
+        isCardVisible,
+        showCard,
+        submitCard,
+      }}
     >
       {children}
     </MyContext.Provider>

@@ -1,27 +1,21 @@
-'use client'
+"use client";
 import { useState } from "react";
 import reactLogo from "../../public/react.svg";
 import { useMyContext } from "../app/provider/statesProvider";
-import introAudio from "../../public/intro.mp3";
+// import introAudio from "../../public/intro.mp3";//TODO:solve the audio import
 
 function App() {
-const {isButtonClicked, setButtonClicked} = useMyContext();
+  const { isButtonClicked, setButtonClicked } = useMyContext();
   const handlerPlayWelcomeTrack = () => {
-    const audio = new Audio(introAudio);
-    audio.play();
+    // const audio = new Audio(introAudio);
+    // audio.play();
     setButtonClicked(true);
   };
-
 
   return (
     <>
       <div className="container">
-        <header>
-          <h1>
-            This collaborative project is designed for beginner to junior-level
-            developers to enjoy and learn together.
-          </h1>
-        </header>
+        <header></header>
         <main>
           <section className="card">
             <button onClick={handlerPlayWelcomeTrack}>
@@ -66,11 +60,10 @@ const {isButtonClicked, setButtonClicked} = useMyContext();
         <footer>
           <section>
             <p className="read-the-docs">
-              Dont know what to do? 1.create a new page to document the collaborators contributions! 2.
-              Did you notice that the audio file can be played while it is
-              already playing? Fix the bug!
+              Dont know what to do? 1.create a new page to document the
+              collaborators contributions! 2. Did you notice that the audio file
+              can be played while it is already playing? Fix the bug!
             </p>
-    
           </section>
         </footer>
       </div>
