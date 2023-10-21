@@ -34,11 +34,11 @@ function App() {
             <p>whatever I hate stylings I want to use Tailwind</p>
             <p>
               <strong>Rule 2:</strong> Feel free to add any features you want,
-              but please make sure to{" "}
+              but please make sure to{' '}
               <mark> build a branch and send a merge request.</mark>
             </p>
             <p>
-              <strong>Rule 3:</strong> Add <mark> comments to your code</mark>{" "}
+              <strong>Rule 3:</strong> Add <mark> comments to your code</mark>{' '}
               so that other developers can understand your implementation.
             </p>
             <p>
