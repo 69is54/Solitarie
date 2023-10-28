@@ -1,14 +1,23 @@
 "use client";
 import React, { useState } from "react";
 import { useMyContext } from "../provider/statesProvider";
+import { Storage } from "aws-amplify";
 
 const Card: React.FC = () => {
   const { isCardVisible, textContext, setTextContext } = useMyContext();
   const [text, setText] = useState("");
 
-  const checkInput = (text: string) => {
-    console.log(text);
-    text ? setTextContext(text) : alert("Nah, you gotta say something now");
+  const checkInput = async (text: string) => {
+    if (text) {
+      try {
+        await Storage.put("Solitarie", text);
+        console.log("file uploaded");
+        setTextContext(text);
+      } catch (error) {
+        console.log("Error", error);
+      }
+    }
+    alert("Nah, you gotta say something now");
   };
 
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -22,7 +31,7 @@ const Card: React.FC = () => {
         name="story"
         rows={5}
         cols={33}
-        placeholder="Write something: I want a ugly navbar"
+        placeholder="Write something: I want an ugly navbar"
         className="text-center ..."
         onChange={handleTextAreaChange}
       ></textarea>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --output public",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "commitlint": "commitlint -E HUSKY_GIT_PARAMS",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "2": "^3.0.0",
+    "aws-amplify": "^5.3.11",
     "commitlint": "^17.7.2",
     "next": "13.5.4",
     "react": "^18",
