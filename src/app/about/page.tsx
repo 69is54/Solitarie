@@ -1,9 +1,9 @@
-"use client";
+'use client'
 import React from "react";
 import { useMyContext } from "../provider/statesProvider";
 import Card from "../component/card";
 
-function AboutPage({ context }: { context: string }) {
+export default function AboutPage({ context }: { context: string }) {
   const { isCardVisible, showCard } = useMyContext();
   const text = "You call the shots. What's the website's mission? ";
 
@@ -18,5 +18,3 @@ function AboutPage({ context }: { context: string }) {
     </div>
   );
 }
-
-export default AboutPage;
