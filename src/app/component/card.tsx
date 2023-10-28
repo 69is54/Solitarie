@@ -1,14 +1,14 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useMyContext } from "../provider/statesProvider";
 
 const Card: React.FC = () => {
-  const { isCardVisible, submitCard } = useMyContext();
+  const { isCardVisible, textContext, setTextContext } = useMyContext();
   const [text, setText] = useState("");
 
   const checkInput = (text: string) => {
     console.log(text);
-    text ? submitCard : alert("Nah, you gotta say something now");
+    text ? setTextContext(text) : alert("Nah, you gotta say something now");
   };
 
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
