@@ -1,27 +1,21 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import introAudio from '../src/assets/intro.mp3';
-import './App.css';
-
-const audio = new Audio(introAudio);
+"use client";
+import { useState } from "react";
+import reactLogo from "../../public/react.svg";
+import { useMyContext } from "../app/provider/statesProvider";
+// import introAudio from "../../public/intro.mp3";//TODO:solve the audio import
 
 function App() {
-  const [isButtonClicked, setButtonClicked] = useState(false);
+  const { isButtonClicked, setButtonClicked } = useMyContext();
   const handlerPlayWelcomeTrack = () => {
-    audio.play();
+    // const audio = new Audio(introAudio);
+    // audio.play();
     setButtonClicked(true);
   };
 
   return (
     <>
       <div className="container">
-        <header>
-          <h1>
-            This collaborative project is designed for beginner to junior-level
-            developers to enjoy and learn together.
-          </h1>
-        </header>
+        <header></header>
         <main>
           <section className="card">
             <button onClick={handlerPlayWelcomeTrack}>
@@ -37,6 +31,7 @@ function App() {
               <mark> Do not use any UI libraries. </mark> We want to learn how
               to build UIs from scratch.
             </p>
+            <p>whatever I hate stylings I want to use Tailwind</p>
             <p>
               <strong>Rule 2:</strong> Feel free to add any features you want,
               but please make sure to{' '}
@@ -64,18 +59,11 @@ function App() {
         </main>
         <footer>
           <section>
-            <p className="rea d-the-docs">
-              Don't know what to do? 1. Click on the logos to learn more 2.
-              create a new page to document the collaborators' contributions! 3.
-              Did you notice that the audio file can be played while it is
-              already playing? Fix the bug!
+            <p className="read-the-docs">
+              Dont know what to do? 1.create a new page to document the
+              collaborators contributions! 2. Did you notice that the audio file
+              can be played while it is already playing? Fix the bug!
             </p>
-            <a href="https://vitejs.dev" target="_blank">
-              <img src={viteLogo} className="logo" alt="Vite logo" />
-            </a>
-            <a href="https://react.dev" target="_blank">
-              <img src={reactLogo} className="logo react" alt="React logo" />
-            </a>
           </section>
         </footer>
       </div>

@@ -1,50 +1,36 @@
-# React + TypeScript + Vite Project
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This repository contains a project setup for working with React, TypeScript, and Vite. Follow the instructions below to clone the project and get it running on your local machine.
+## Getting Started
 
-## Cloning the Repository
+First, run the development server:
 
-Clone the repository to your local machine using the following command:
-
-```bash
-git clone https://github.com/[username]/repo.git
-```
-## Setting Up the Project
-### 1. Install dependencies
-You can use npm, yarn, or pnpm to install the necessary dependencies for this project. Run one of the following commands in the project directory:
-```bash
-npm install
-```
-or
-```bash
-yarn install
-```
-or 
-```bash
-pnpm install
-```
-### 2. Start the Development Server
-Start the development server to run the project on http://localhost:5173/ by executing one of the following commands:
 ```bash
 npm run dev
-```
-or
-```bash
+# or
 yarn dev
-```
-or 
-```bash
+# or
 pnpm dev
+# or
+bun dev
 ```
 
-## How to Contribute
-### Commit Conventions
-Adhere to the following prefixes when making commits to this repository:
-* **feature**: For commits introducing new features or functionality.
-* **fix**: For commits addressing bug fixes and resolving issues or defects.
-* **chore**: For routine tasks, maintenance, or general improvements that don't fall into other categories.
-* **docs**: For commits related to documentation updates or additions.
-* **refactor**: For commits indicating code restructuring or optimizations without adding new features or fixing bugs.
-* **test**: For commits related to changes or additions in the test suite.
-* **build**: For commits related to build system changes, dependencies, or package management.
-* **ci**: For commits related to continuous integration configurations or pipelines.this prefix involve changes to continuous integration (CI) configurations or pipelines.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
