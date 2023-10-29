@@ -1,14 +1,28 @@
 "use client";
 import React, { useState } from "react";
 import { useMyContext } from "../provider/statesProvider";
+import { Storage } from "aws-amplify";
+
+Storage.configure({ region: "us-east-1" });
 
 const Card: React.FC = () => {
-  const { isCardVisible, textContext, setTextContext } = useMyContext();
+  const { isCardVisible, setTextContext, closeCard } = useMyContext();
   const [text, setText] = useState("");
 
-  const checkInput = (text: string) => {
-    console.log(text);
-    text ? setTextContext(text) : alert("Nah, you gotta say something now");
+  const checkInput = async (text: string) => {
+    if (text) {
+      try {
+        console.log("clicked");
+        // await Storage.put("Solitarie", text); //TODO: fix storage error Error: Network Error
+        setTextContext(text);
+        closeCard();
+      } catch (error) {
+        console.log("storage error", error);
+        closeCard();
+      }
+    } else {
+      alert("Nah, you gotta say something now");
+    }
   };
 
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -22,7 +36,7 @@ const Card: React.FC = () => {
         name="story"
         rows={5}
         cols={33}
-        placeholder="Write something: I want a ugly navbar"
+        placeholder="Write something: I want an ugly navbar"
         className="text-center ..."
         onChange={handleTextAreaChange}
       ></textarea>

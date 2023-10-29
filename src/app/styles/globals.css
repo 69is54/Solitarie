@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@aws-amplify/ui-react/styles.css;
 
 html,
 body,
