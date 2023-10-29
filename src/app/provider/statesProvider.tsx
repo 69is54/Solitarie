@@ -6,7 +6,7 @@ interface ContextType {
   setButtonClicked: (value: boolean) => void;
   isCardVisible: boolean;
   showCard: () => void;
-
+  closeCard:()=>void;
   textContext: string;
   setTextContext: (value: string) => void;
 }
@@ -24,9 +24,14 @@ const MyProvider = ({ children }: { children: React.ReactNode }) => {
     setCardVisible(true);
   };
 
+  const closeCard = () => {
+    setCardVisible(false);
+  };
+
   return (
     <MyContext.Provider
       value={{
+        closeCard,
         setTextContext,
         isButtonClicked,
         setButtonClicked,

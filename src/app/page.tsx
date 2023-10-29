@@ -1,6 +1,4 @@
 "use client";
-import { useState } from "react";
-import reactLogo from "../../public/react.svg";
 import { useMyContext } from "../app/provider/statesProvider";
 import introAudio from '../../public/intro.mp3'
 

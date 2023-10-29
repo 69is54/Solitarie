@@ -2,20 +2,23 @@
 import React, { useState } from "react";
 import { useMyContext } from "../provider/statesProvider";
 import { Storage } from "aws-amplify";
-import { useRouter } from "next/navigation";
+
+Storage.configure({ region: "us-east-1" });
 
 const Card: React.FC = () => {
-  const { isCardVisible, setTextContext } = useMyContext();
+  const { isCardVisible, setTextContext, closeCard } = useMyContext();
   const [text, setText] = useState("");
-  const router = useRouter();
+
   const checkInput = async (text: string) => {
     if (text) {
       try {
-        await Storage.put("Solitarie", text);
+        console.log("clicked");
+        // await Storage.put("Solitarie", text); //TODO: fix storage error Error: Network Error
         setTextContext(text);
-        router.push("/about");
+        closeCard();
       } catch (error) {
         console.log("storage error", error);
+        closeCard();
       }
     } else {
       alert("Nah, you gotta say something now");
