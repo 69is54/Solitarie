@@ -2,13 +2,13 @@
 import { useState } from "react";
 import reactLogo from "../../public/react.svg";
 import { useMyContext } from "../app/provider/statesProvider";
-// import introAudio from "../../public/intro.mp3";//TODO:solve the audio import
+import introAudio from '../../public/intro.mp3'
 
 function App() {
   const { isButtonClicked, setButtonClicked } = useMyContext();
   const handlerPlayWelcomeTrack = () => {
-    // const audio = new Audio(introAudio);
-    // audio.play();
+    const audio = new Audio(introAudio);
+    audio.play();
     setButtonClicked(true);
   };
 

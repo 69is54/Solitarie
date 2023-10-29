@@ -2,22 +2,24 @@
 import React, { useState } from "react";
 import { useMyContext } from "../provider/statesProvider";
 import { Storage } from "aws-amplify";
+import { useRouter } from "next/navigation";
 
 const Card: React.FC = () => {
-  const { isCardVisible, textContext, setTextContext } = useMyContext();
+  const { isCardVisible, setTextContext } = useMyContext();
   const [text, setText] = useState("");
-
+  const router = useRouter();
   const checkInput = async (text: string) => {
     if (text) {
       try {
         await Storage.put("Solitarie", text);
-        console.log("file uploaded");
         setTextContext(text);
+        router.push("/about");
       } catch (error) {
-        console.log("Error", error);
+        console.log("storage error", error);
       }
+    } else {
+      alert("Nah, you gotta say something now");
     }
-    alert("Nah, you gotta say something now");
   };
 
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

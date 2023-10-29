@@ -1,22 +1,14 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    webpack: (config) => {
-      config.module.rules.push({
-        test: /\.(mp3)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            publicPath: '/_next/static/', // Adjust this path as needed
-            outputPath: 'static/', // Adjust this path as needed
-            name: '[name].[ext]',
-            esModule: false, // Important for audio files
-          },
-        },
-      });
-  
-      return config;
-    },
-  };
-  
-  module.exports = nextConfig;
-  
+// next.config.js
+module.exports = {
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.(mp3)$/,
+      type: "asset/resource",
+      generator: {
+        filename: "static/chunks/[path][name].[hash][ext]",
+      },
+    });
+
+    return config;
+  },
+};
