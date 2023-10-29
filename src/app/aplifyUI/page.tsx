@@ -7,28 +7,28 @@ import styles from '../styles/Home.module.css';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
-export async function getServerSideProps({ req }: { req: IncomingMessage }) {
-  const SSR = withSSRContext({ req });
+// export async function getServerSideProps({ req }: { req: IncomingMessage }) {
+//   const SSR = withSSRContext({ req });
   
-  try {
-    const response = await SSR.API.get('notYetApiName', '/posts', {
-      headers: {
-        Authorization: `Bearer ${await Auth.currentSession()}`,
-      },
-    });
+//   try {
+//     const response = await SSR.API.get('notYetApiName', '/posts', {
+//       headers: {
+//         Authorization: `Bearer ${await Auth.currentSession()}`,
+//       },
+//     });
     
-    return {
-      props: {
-        posts: response.data,
-      },
-    };
-  } catch (err) {
-    console.log(err);
-    return {
-      props: {},
-    };
-  }
-}
+//     return {
+//       props: {
+//         posts: response.data,
+//       },
+//     };
+//   } catch (err) {
+//     console.log(err);
+//     return {
+//       props: {},
+//     };
+//   }
+// } TODO: fix "getServerSideProps" is not supported in app/. Read more: https://nextjs.org/docs/app/building-your-application/data-fetchingx
 
 async function handleCreatePost(event:any) {
   event.preventDefault();
